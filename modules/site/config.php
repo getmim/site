@@ -23,6 +23,9 @@ return [
         'required' => [
             [
                 'core' => null
+            ],
+            [
+                'lib-view' => null
             ]
         ],
         'optional' => [
@@ -30,7 +33,7 @@ return [
                 'lib-output-cache' => null
             ],
             [
-                'lib-view' => null
+                'lib-event' => null
             ]
         ]
     ],
