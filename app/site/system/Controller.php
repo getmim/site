@@ -22,7 +22,7 @@ class Controller extends \Mim\Controller
 
     }
 
-    public function show500Action(object $error): void{
+    public function show500Action(): void{
         
     }
 }
