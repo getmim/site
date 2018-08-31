@@ -61,6 +61,12 @@ return [
 
     'routes' => [
         'site' => [
+            '404' => [
+                'handler' => 'Site\\Controller::show404'
+            ],
+            '500' => [
+                'handler' => 'Site\\Controller::show500'
+            ],
             'siteHome' => [
                 'path' => [
                     'value' => '/'

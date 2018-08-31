@@ -19,10 +19,15 @@ class Controller extends \Mim\Controller
     }
 
     public function show500(object $error): void{
+        $tx = $error->text;
+        $tx.= '<br>';
+        $tx.= 'File: ' . $error->file . ' (' . $error->line . ')';
 
+        $this->res->addContent($tx);
+        $this->res->send();
     }
 
     public function show500Action(): void{
-        
+        $this->show500(\Mim\Library\Logger::$last_error);
     }
 }
