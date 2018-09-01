@@ -22,6 +22,15 @@ class Controller extends \Mim\Controller
         $tx = $error->text;
         $tx.= '<br>';
         $tx.= 'File: ' . $error->file . ' (' . $error->line . ')';
+        if(isset($error->trace)){
+            $tx.= '<ul>';
+            foreach($error->trace as $trace){
+                if(!isset($trace['file']))
+                    continue;
+                $tx.= '<li>' . $trace['file'] . '(' . $trace['line'] . ')' . '</li>';
+            }
+            $tx.= '</ul>';
+        }
 
         $this->res->addContent($tx);
         $this->res->send();
