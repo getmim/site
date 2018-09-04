@@ -30,10 +30,7 @@ return [
         ],
         'optional' => [
             [
-                'lib-output-cache' => null
-            ],
-            [
-                'lib-event' => null
+                'lib-cache-output' => null
             ]
         ]
     ],
