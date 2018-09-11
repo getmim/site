@@ -11,11 +11,13 @@ class Controller extends \Mim\Controller
     implements \Mim\Iface\GateController
 {
     public function show404(): void{
-
+        $this->res->setStatus(404);
+        $this->res->addContent('<h1>Not found</h1>');
+        $this->res->send();
     }
 
     public function show404Action(): void{
-
+        $this->show404();
     }
 
     public function show500(object $error): void{

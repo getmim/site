@@ -31,6 +31,12 @@ return [
         'optional' => [
             [
                 'lib-cache-output' => null
+            ],
+            [
+                'site-meta' => null
+            ],
+            [
+                'site-setting' => null
             ]
         ]
     ],
