@@ -18,3 +18,27 @@ Untuk dukungan output cache, perlu juga memasang module `lib-cache-output`.
 
 Module ini membuat satu gate dengan nama `site` dengan `host` adalah `HOST`, 
 dan `path` adalah `/`.
+
+## Konfigurasi
+
+Jika module `lib-robot` terpasang, maka module bisa mendaftarkan link untuk
+ditambahkan ke daftar link rss feed dan sitemap global dengan menambahkan
+konfigurasi seperti di bawah:
+
+```php
+return [
+    'site' => [
+        'robot' => [
+            'feed' => [
+                'Class::method' => true
+            ],
+            'sitemap' => [
+                'Class::method' => true
+            ]
+        ]
+    ]
+];
+```
+
+Method `Class::method` harus mengembalikan nilai array sesuai dengan struktur
+rss/sitemap pada lib-robot.
