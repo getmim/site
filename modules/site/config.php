@@ -2,7 +2,7 @@
 
 return [
     '__name' => 'site',
-    '__version' => '0.0.2',
+    '__version' => '0.1.0',
     '__git' => 'git@github.com:getphun/site.git',
     '__license' => 'MIT',
     '__author' => [
@@ -104,6 +104,20 @@ return [
             ],
             'sitemap' => [
                 'Site\\Library\\Robot::sitemap' => true
+            ]
+        ]
+    ],
+    'adminSiteSetting' => [
+        'editable' => [
+            'Frontpage' => [
+                'label' => 'Frontpage',
+                'icon'  => '<i class="fas fa-hand-pointer"></i>',
+                'info'  => 'Change site frontpage preference'
+            ],
+            'Social Accounts' => [
+                'label' => 'Social Accounts',
+                'icon'  => '<i class="fas fa-share-alt-square"></i>',
+                'info'  => 'List of company social accounts'
             ]
         ]
     ]
