@@ -107,17 +107,33 @@ return [
             ]
         ]
     ],
-    'adminSiteSetting' => [
-        'editable' => [
-            'Frontpage' => [
+    'adminSetting' => [
+        'menus' => [
+            'site-frontpage' => [
                 'label' => 'Frontpage',
                 'icon'  => '<i class="fas fa-hand-pointer"></i>',
-                'info'  => 'Change site frontpage preference'
+                'info'  => 'Change site frontpage preference',
+                'perm'  => 'update_site_setting',
+                'index' => 0,
+                'options' => [
+                    'site-frontpage' => [
+                        'label' => 'Change settings',
+                        'route' => ['adminSiteSettingSingle', ['group'=>'Frontpage']]
+                    ]
+                ]
             ],
-            'Social Accounts' => [
+            'site-social-accounts' => [
                 'label' => 'Social Accounts',
                 'icon'  => '<i class="fas fa-share-alt-square"></i>',
-                'info'  => 'List of company social accounts'
+                'info'  => 'List of company social accounts',
+                'perm'  => 'update_site_setting',
+                'index' => 1000,
+                'options' => [
+                    'site-frontpage' => [
+                        'label' => 'Change settings',
+                        'route' => ['adminSiteSettingSingle', ['group'=>'Social Accounts']]
+                    ]
+                ]
             ]
         ]
     ]
