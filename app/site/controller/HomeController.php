@@ -7,9 +7,17 @@
 
 namespace Site\Controller;
 
+use Site\Library\Meta;
+
 class HomeController extends \Site\Controller
 {
     public function indexAction(){
-        echo 'awesome';
+        $params = [
+            'meta'  => Meta::single()
+        ];
+
+        $this->res->render('home/index', $params);
+        $this->res->setCache(86400);
+        $this->res->send();
     }
 }

@@ -2,7 +2,7 @@
 
 return [
     '__name' => 'site',
-    '__version' => '0.1.1',
+    '__version' => '0.1.2',
     '__git' => 'git@github.com:getphun/site.git',
     '__license' => 'MIT',
     '__author' => [
@@ -13,7 +13,8 @@ return [
     '__files' => [
         'app/site' => ['install','remove'],
         'modules/site' => ['install','update','remove'],
-        'theme/site/form/field' => ['install','remove']
+        'theme/site/form/field' => ['install','remove'],
+        'theme/site/home' => ['install','remove']
     ],
     '__dependencies' => [
         'required' => [
@@ -100,10 +101,10 @@ return [
     'site' => [
         'robot' => [
             'feed' => [
-                'Site\\Library\\Robot::feed' => true
+                'Site\\Library\\Robot::feed' => TRUE
             ],
             'sitemap' => [
-                'Site\\Library\\Robot::sitemap' => true
+                'Site\\Library\\Robot::sitemap' => TRUE
             ]
         ]
     ],
@@ -111,27 +112,31 @@ return [
         'menus' => [
             'site-frontpage' => [
                 'label' => 'Frontpage',
-                'icon'  => '<i class="fas fa-hand-pointer"></i>',
-                'info'  => 'Change site frontpage preference',
-                'perm'  => 'update_site_setting',
+                'icon' => '<i class="fas fa-hand-pointer"></i>',
+                'info' => 'Change site frontpage preference',
+                'perm' => 'update_site_setting',
                 'index' => 0,
                 'options' => [
                     'site-frontpage' => [
                         'label' => 'Change settings',
-                        'route' => ['adminSiteSettingSingle', ['group'=>'Frontpage']]
+                        'route' => ['adminSiteSettingSingle',[
+                                'group' => 'Frontpage'
+                            ]]
                     ]
                 ]
             ],
             'site-social-accounts' => [
                 'label' => 'Social Accounts',
-                'icon'  => '<i class="fas fa-share-alt-square"></i>',
-                'info'  => 'List of company social accounts',
-                'perm'  => 'update_site_setting',
+                'icon' => '<i class="fas fa-share-alt-square"></i>',
+                'info' => 'List of company social accounts',
+                'perm' => 'update_site_setting',
                 'index' => 1000,
                 'options' => [
                     'site-frontpage' => [
                         'label' => 'Change settings',
-                        'route' => ['adminSiteSettingSingle', ['group'=>'Social Accounts']]
+                        'route' => ['adminSiteSettingSingle',[
+                                'group' => 'Social Accounts'
+                            ]]
                     ]
                 ]
             ]
