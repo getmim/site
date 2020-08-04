@@ -2,7 +2,7 @@
 
 return [
     '__name' => 'site',
-    '__version' => '0.1.2',
+    '__version' => '0.2.0',
     '__git' => 'git@github.com:getphun/site.git',
     '__license' => 'MIT',
     '__author' => [
@@ -119,9 +119,7 @@ return [
                 'options' => [
                     'site-frontpage' => [
                         'label' => 'Change settings',
-                        'route' => ['adminSiteSettingSingle',[
-                                'group' => 'Frontpage'
-                            ]]
+                        'route' => ['adminSiteSettingSingle',['group' => 'Frontpage']]
                     ]
                 ]
             ],
@@ -134,9 +132,7 @@ return [
                 'options' => [
                     'site-frontpage' => [
                         'label' => 'Change settings',
-                        'route' => ['adminSiteSettingSingle',[
-                                'group' => 'Social Accounts'
-                            ]]
+                        'route' => ['adminSiteSettingSingle', ['group'=>'Social Accounts']]
                     ]
                 ]
             ]

@@ -39,7 +39,7 @@ class Meta
         ];
 
         // schema page
-        $result['head']['schema.org'][] = [
+        $site = [
             '@context'      => 'http://schema.org',
             '@type'         => 'WebSite',
             'name'          => \Mim::$app->config->name,
@@ -54,6 +54,18 @@ class Meta
                 'width'         => 192
             ]
         ];
+
+        // potentialAction
+        if(module_exists('site-search')){
+            $route = \Mim::$app->router->to('siteSearch', [], ['q'=>'']);
+            $site['potentialAction'] = [
+                '@type' => 'SearchAction',
+                'target' => $route . '{search_term_string}',
+                'query-input' => 'required name=search_term_string'
+            ];
+        }
+
+        $result['head']['schema.org'][] = $site;
 
         return $result;
     }
