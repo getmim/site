@@ -2,7 +2,7 @@
 /**
  * Meta
  * @package site
- * @version 0.1.1
+ * @version 0.3.0
  */
 
 namespace Site\Library;
@@ -24,8 +24,19 @@ class Meta
 
         $std_metas = ['title','description','keywords'];
         $meta = (object)[];
-        foreach($std_metas as $name)
-            $meta->$name = ($site_setting?\Mim::$app->setting->{'frontpage_'.$name}:NULL) ?? $deff;
+        foreach($std_metas as $name){
+            $value = $deff;
+            if($site_setting)
+                $value = \Mim::$app->setting->{'frontpage_'.$name} ?? $value;
+
+            $meta->$name = $value;
+        }
+
+        $page = \Mim::$app->req->getQuery('page');
+        if($page && $page > 1){
+            $meta->title.= ' Page ' . $page;
+            $meta->description.= ' Page ' . $page;
+        }
 
         $result['head'] = [
             'description'       => $meta->description,
