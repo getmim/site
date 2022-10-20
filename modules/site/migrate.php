@@ -20,7 +20,8 @@ return [
                 'app_social_tumblr'         => ['type' => '6', 'group' => 'Social Accounts', 'value' => '' ],
                 'app_social_twitter'        => ['type' => '6', 'group' => 'Social Accounts', 'value' => '' ],
                 'app_social_vimeo'          => ['type' => '6', 'group' => 'Social Accounts', 'value' => '' ],
-                'app_social_youtube'        => ['type' => '6', 'group' => 'Social Accounts', 'value' => '' ]
+                'app_social_youtube'        => ['type' => '6', 'group' => 'Social Accounts', 'value' => '' ],
+                'app_social_tiktok'         => ['type' => '6', 'group' => 'Social Accounts', 'value' => '' ]
             ]
         ]
     ]
